@@ -1,10 +1,8 @@
-/*  jshint esversion: 6 */
 import React, { Component } from 'react'
-import logo from './logo.svg';
-import './App.css'
+// import PropTypes from 'prop-types';
 
-class App extends Component {
-  constructor(){
+export default class Home extends Component{
+	constructor(){
     super();
     this.state = {
       blogPosts: []
@@ -24,19 +22,23 @@ class App extends Component {
     })
   }
   render() {
-    let blogPosts = this.state.blogPosts.map(blogPost, index) => {
+    let blogPosts = this.state.blogPosts.map( (blogPost, index) => {
       return(
         <div key={index}>
-          
+          <h1>{blogPost.title.rendered}</h1>
+          <p>{blogPost.excerpt.rendered}</p>
+
         </div>
       )
-    }
+    })
     return (
-      <div className="App">
-        <h1>A Coder's Odyssey</h1>
+    	<div className="Home">
+			<h1>A Coder's Odyssey</h1>
+			<img style={{height:'40px', width:'40px', display:'inline-block'}} src={require('../assets/enso-b.png')} alt=""/>	
+        	{blogPosts}
       </div>
     )
   }
+
 }
 
-export default App

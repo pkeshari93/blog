@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 // import logo from './logo.svg';
 import Header from './Header'
 import '../App.css'
-import Blog from './Blog'
 
 
 class App extends Component {
@@ -17,6 +16,7 @@ class App extends Component {
     return(
       <div>
         <div><Header /></div>
+        
 
         <div>
           {this.props.children}

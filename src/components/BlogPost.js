@@ -3,32 +3,39 @@ import React, { Component } from 'react'
 
 export default class BlogPost extends Component {
 
-	constructor(props) {
-    	super(props);
-    	this.state = {
-      		post: {}
-    	};
-  	}
+	constructor(props){
+		super(props)
+		this.state = {
+			post:{
+				'id': '',
+				'title': '',
+				'excerpt': ''
+			}
+		}
+	}
 
-  	
-
- 	render() {
- 		let postUrl = 'http://localhost:8888/wp-json/wp/v2/posts/' + 'this.props.match.params.id'
- 		fetch(postUrl)
- 		.then(response => response.json()) 
+	componentDidMount(){
+    	let postUrl = 'http://localhost:8888/wp-json/wp/v2/posts/' + this.props.params.id
+    	console.log(postUrl)
+    	fetch(postUrl)
+    	.then(response => response.json()) 
     	.then(response => {
-      	this.setState({
-        	post: response
-      	})
-    })
-    	return (
-    		<div className="Home">
-				<h1>Blog Post</h1>
- 				<img style={{height:'40px', width:'40px', display:'inline-block'}} src={require('../assets/enso-b.png')} alt=""/>
- 				<p></p>
-          		<hr/>	
-      		</div>
-    	)
-  	 }
+      		this.setState({
+        		post: {id: response.id, title: response.title, excerpt: response.excerpt}
+      		})
+      		console.log(this.state.post)
+    	})
+  	}
+  	render(){
+  		
+  		return(
 
+  			<div>
+  				<h1>Hello</h1>
+  				<h1>{this.state.post.title.rendered}</h1>
+  				<h1>{this.state.post.excerpt.rendered}</h1>
+
+  			</div>
+  		)
+  	}
 }

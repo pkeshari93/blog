@@ -11,7 +11,6 @@ export default class Header extends Component {
     			<ul>
     				<li><Link to="/home">home</Link></li>
     				<li><Link to="/blog">blog</Link></li>
-    				<li><Link to="/blogPost">blog post</Link></li>
     			</ul>
     		</div>
     	</nav>

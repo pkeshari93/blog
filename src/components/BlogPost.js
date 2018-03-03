@@ -7,9 +7,9 @@ export default class BlogPost extends Component {
 		super(props)
 		this.state = {
 			post:{
-				'id': '',
+				'date': '',
 				'title': '',
-				'excerpt': ''
+				'content': ''
 			}
 		}
 	}
@@ -21,7 +21,7 @@ export default class BlogPost extends Component {
     	.then(response => response.json()) 
     	.then(response => {
       		this.setState({
-        		post: {id: response.id, title: response.title, excerpt: response.excerpt}
+        		post: {date: response.date_gmt, title: response.title, content: response.content}
       		})
       		console.log(this.state.post)
     	})
@@ -31,9 +31,10 @@ export default class BlogPost extends Component {
   		return(
 
   			<div>
-  				<h1>Hello</h1>
+
   				<h1>{this.state.post.title.rendered}</h1>
-  				<h1>{this.state.post.excerpt.rendered}</h1>
+  				<p>{this.state.post.date}</p>
+  				<p dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered}}></p>
 
   			</div>
   		)

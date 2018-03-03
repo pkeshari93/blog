@@ -560,6 +560,8 @@ function twentyseventeen_widget_tag_cloud_args( $args ) {
 }
 add_filter( 'widget_tag_cloud_args', 'twentyseventeen_widget_tag_cloud_args' );
 
+
+
 /**
  * Implement the Custom Header feature.
  */

@@ -35,8 +35,7 @@ export default class Blog extends Component {
         <div key={index}>
           <p>{blogPost.date_gmt}</p>
           <h1>{blogPost.title.rendered}</h1>
-          <p>{blogPost.excerpt.rendered}</p>
-
+          <p dangerouslySetInnerHTML={{ __html: blogPost.excerpt.rendered}}></p>
           <hr/>
 
 

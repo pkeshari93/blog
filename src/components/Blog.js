@@ -37,47 +37,66 @@ export default class Blog extends Component {
     const paraStyle = {
       fontSize: "15px",
       padding: "0 15px",
-      display: "block"
+      paddingBottom: "10px",
+      display: "block",
+      color: '#313740'
     }
 
     const hTwoStyle = {
       fontSize: "20px",
-      padding: "15px 15px",
-      display: "block"
+      padding: "0 10px",
+      paddingBottom: "10px",
+      display: "block",
     }
 
     const buttonStyle = {
-      background: "#F2E8E4",
+      background: "#656A73",
       padding: "5px",
-      marginTop: "10px",
+      marginBottom: "10px",
       borderRadius: "10px",
       display: "inline-block",
       float: "center"
     }
 
-    const dateStyle = {
-      display: 'block',
-      fontSize: "12px",
+    const hThreeStyle = {
+      fontSize: "15px",
       paddingTop: "0 5px",
-      float: "left"
+      display: "block"
+
+    }
+
+    const divStyle = {
+      background: "#fff",
+      margin: "10px 10px",
+      borderRadius: '10px',
+      padding: "10px",
+      color: '#313740',
+      WebkitBoxShadow: '7px 7px 15px -8px rgba(255,255,255,1)',
+      MozBoxShadow: '7px 7px 15px -8px rgba(255,255,255,1)',
+      boxShadow: '7px 7px 15px -8px rgba(255,255,255,1)'
+
     }
 
     let blogPosts = this.state.blogPosts.map( (blogPost, index) => {
+      var date = new Date(blogPost.date_gmt)
+      var myDate = date.getDate() + "\\" +  (date.getMonth()+1) + "\\" + date.getFullYear()
       return(
 
         <div key={index}>
-          <h2 style={hTwoStyle}>{blogPost.title.rendered}</h2>
-          <p style={paraStyle} dangerouslySetInnerHTML={{ __html: blogPost.excerpt.rendered}}></p>
-          <button style={buttonStyle}><Link style={{color: "#313740"}} to={"post/" + blogPost.id}>Read More</Link></button>
-          <p style={dateStyle}>{blogPost.date_gmt}</p>
-          <hr/>
+
+          <div style={divStyle}>
+            <h2 style={hTwoStyle}>{blogPost.title.rendered}</h2>
+            <p style={paraStyle} dangerouslySetInnerHTML={{ __html: blogPost.excerpt.rendered}}></p>
+            <button style={buttonStyle}><Link style={{color: "#fff"}} to={"post/" + blogPost.id}>Read More</Link></button>
+            <h3 style={hThreeStyle}>{myDate}</h3>
+          </div>
         </div>
       )
     })
     return (
     	<div>
           <h1 style={hOneStyle}>Articles</h1>
-          <hr style={{padding:"0 10px"}}/>
+          <hr style={{margin:"0 15px", color: "#fff"}}/>
         	{blogPosts}
 
       </div>

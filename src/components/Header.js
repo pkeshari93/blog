@@ -9,8 +9,8 @@ export default class Header extends Component {
   	const headerStyles = {
   		width: "100%",
   		height: "auto",
-  		background: "#313740",
-  		color: "#F2E8E4",
+  		background: "#656A73",
+  		color: "#fff",
   	}
   	const iconStyle = {
   		height: "40px",

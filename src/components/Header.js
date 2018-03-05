@@ -9,7 +9,7 @@ export default class Header extends Component {
   	const headerStyles = {
   		width: "100%",
   		height: "auto",
-  		background: "#656A73",
+  		background: "#1F2329",
   		color: "#fff",
   	}
   	const iconStyle = {
@@ -53,7 +53,6 @@ export default class Header extends Component {
 	    		</div>
 	    	</nav>
     	</div>
-
     )
   }
 

@@ -13,12 +13,13 @@ export default class Blog extends Component {
   }
 
   componentDidMount() {
-    let blogPostUrl = 'http://localhost:8888/wp-json/wp/v2/posts'
+    let blogPostUrl = 'http://localhost:8888/wp-json/wp/v2/posts?_embed'
 
     // fetching the promise 
     fetch(blogPostUrl)
     .then(response => response.json()) 
     .then(response => {
+
       this.setState({
         blogPosts: response
       })
@@ -28,7 +29,6 @@ export default class Blog extends Component {
 
 
   render() {
-
     const hOneStyle = {
       fontSize: "30px",
       paddingTop: "10px",
@@ -73,11 +73,13 @@ export default class Blog extends Component {
       color: '#313740',
       WebkitBoxShadow: '7px 7px 15px -8px rgba(255,255,255,1)',
       MozBoxShadow: '7px 7px 15px -8px rgba(255,255,255,1)',
-      boxShadow: '7px 7px 15px -8px rgba(255,255,255,1)'
+      boxShadow: '7px 7px 15px -8px rgba(255,255,255,1)',
+      lineHeight: '2'
 
     }
 
     let blogPosts = this.state.blogPosts.map( (blogPost, index) => {
+      
       let month = new Array();
       month[0] = "January";
       month[1] = "February";
@@ -101,6 +103,14 @@ export default class Blog extends Component {
           <div style={divStyle}>
             <h2 style={hTwoStyle}>{blogPost.title.rendered}</h2>
             <h3 style={hThreeStyle}>{myDate}</h3>
+            <div>
+              {blogPost.better_featured_image ? (
+                // console.log(blogPost.better_featured_image)
+                <img src={blogPost.better_featured_image.media_details.sizes.thumbnail.source_url} />
+              ) : (
+                ''
+              )}
+            </div>
             <hr style={{margin:"0 30px", marginBottom:"10px"}}/>
             <p style={paraStyle} dangerouslySetInnerHTML={{ __html: blogPost.excerpt.rendered}}></p>
             <button style={buttonStyle}><Link style={{color: "#fff"}} to={"post/" + blogPost.id}>Read More</Link></button>
@@ -113,7 +123,7 @@ export default class Blog extends Component {
           <h1 style={hOneStyle}>Articles</h1>
           <hr style={{margin:"0 15px", color: "#fff"}}/>
         	{blogPosts}
-
+          <hr style={{margin:"0 5px", margin:"10px 0"}}/>
       </div>
     )
   }

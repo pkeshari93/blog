@@ -45,7 +45,7 @@ export default class Blog extends Component {
     const hTwoStyle = {
       fontSize: "20px",
       padding: "0 10px",
-      paddingBottom: "10px",
+      paddingBottom: "5px",
       display: "block",
     }
 
@@ -59,8 +59,8 @@ export default class Blog extends Component {
     }
 
     const hThreeStyle = {
-      fontSize: "15px",
-      paddingTop: "0 5px",
+      fontSize: "12px",
+      paddingBottom: "2px",
       display: "block"
 
     }
@@ -78,17 +78,32 @@ export default class Blog extends Component {
     }
 
     let blogPosts = this.state.blogPosts.map( (blogPost, index) => {
-      var date = new Date(blogPost.date_gmt)
-      var myDate = date.getDate() + "\\" +  (date.getMonth()+1) + "\\" + date.getFullYear()
+      let month = new Array();
+      month[0] = "January";
+      month[1] = "February";
+      month[2] = "March";
+      month[3] = "April";
+      month[4] = "May";
+      month[5] = "June";
+      month[6] = "July";
+      month[7] = "August";
+      month[8] = "September";
+      month[9] = "October";
+      month[10] = "November";
+      month[11] = "December";
+      let date = new Date(blogPost.date_gmt)
+      let n = month[date.getMonth()];
+      let myDate = n +' '+ + date.getDate()  +  " " + date.getFullYear()
       return(
 
         <div key={index}>
 
           <div style={divStyle}>
             <h2 style={hTwoStyle}>{blogPost.title.rendered}</h2>
+            <h3 style={hThreeStyle}>{myDate}</h3>
+            <hr style={{margin:"0 30px", marginBottom:"10px"}}/>
             <p style={paraStyle} dangerouslySetInnerHTML={{ __html: blogPost.excerpt.rendered}}></p>
             <button style={buttonStyle}><Link style={{color: "#fff"}} to={"post/" + blogPost.id}>Read More</Link></button>
-            <h3 style={hThreeStyle}>{myDate}</h3>
           </div>
         </div>
       )

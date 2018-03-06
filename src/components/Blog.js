@@ -31,12 +31,10 @@ export default class Blog extends Component {
   render() {
     const hOneStyle = {
       fontSize: "30px",
-      paddingTop: "10px",
       display: "block"
     }
     const paraStyle = {
       fontSize: "15px",
-      padding: "0 15px",
       paddingBottom: "10px",
       display: "block",
       color: '#313740'
@@ -67,16 +65,18 @@ export default class Blog extends Component {
 
     const divStyle = {
       background: "#fff",
-      margin: "10px 10px",
-      borderRadius: '10px',
       padding: "10px",
       color: '#313740',
-      WebkitBoxShadow: '7px 7px 15px -8px rgba(255,255,255,1)',
-      MozBoxShadow: '7px 7px 15px -8px rgba(255,255,255,1)',
-      boxShadow: '7px 7px 15px -8px rgba(255,255,255,1)',
-      lineHeight: '2'
-
+      lineHeight: '2',
     }
+
+    const postItem = {
+      padding: '50px 20px',
+      overflow: 'hidden',
+      
+    }
+
+
 
     let blogPosts = this.state.blogPosts.map( (blogPost, index) => {
       
@@ -95,12 +95,12 @@ export default class Blog extends Component {
       month[11] = "December";
       let date = new Date(blogPost.date_gmt)
       let n = month[date.getMonth()];
-      let myDate = n +' '+ + date.getDate()  +  " " + date.getFullYear()
+      let myDate = n +' '+ + date.getDate()  +  ", " + date.getFullYear()
       return(
 
         <div key={index}>
 
-          <div style={divStyle}>
+          <div style={postItem}>
             <h2 style={hTwoStyle}>{blogPost.title.rendered}</h2>
             <h3 style={hThreeStyle}>{myDate}</h3>
             <div>
@@ -111,19 +111,20 @@ export default class Blog extends Component {
                 ''
               )}
             </div>
-            <hr style={{margin:"0 30px", marginBottom:"10px"}}/>
             <p style={paraStyle} dangerouslySetInnerHTML={{ __html: blogPost.excerpt.rendered}}></p>
             <button style={buttonStyle}><Link style={{color: "#fff"}} to={"post/" + blogPost.id}>Read More</Link></button>
           </div>
+          <hr/>                                  
         </div>
       )
     })
     return (
-    	<div>
+    	<div style={divStyle}>
           <h1 style={hOneStyle}>Articles</h1>
-          <hr style={{margin:"0 15px", color: "#fff"}}/>
+          <hr style={{margin: '0 20%'}}/>
         	{blogPosts}
-          <hr style={{margin:"0 5px", margin:"10px 0"}}/>
+          <hr style={{margin:"10px 30px"}}/>
+          <hr style={{margin:"10px 50px"}}/>          
       </div>
     )
   }

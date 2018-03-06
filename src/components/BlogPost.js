@@ -73,10 +73,12 @@ export default class BlogPost extends Component {
         paddingTop: "20px",
       }
       const divStyle = {
-        textAlign: 'Left',
+        display: 'block',
+        textAlign: 'left',
         background: '#fff',
         lineHeight: '2',
         color: '#313740',
+        overflow: 'hidden'
       }
   		
   		return(
@@ -93,3 +95,4 @@ export default class BlogPost extends Component {
   		)
   	}
 }
+

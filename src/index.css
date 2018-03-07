@@ -9,7 +9,7 @@ body {
 
 a{
 	text-decoration: none;
-	color: #fff;
+  color:#fff;  
 	font-size: 30px;
   display: inline-block;
 }
@@ -17,3 +17,4 @@ a{
 ul{
 	padding: none;
 }
+

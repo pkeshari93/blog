@@ -1,9 +1,55 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import BlogPost from './BlogPost'
+import styled from 'styled-components'
+
 
 // import PropTypes from 'prop-types';
 
+const BlogDiv = styled.div`
+  background: #fff;
+  padding: 10px;
+  color: #313740;
+  line-height: 2;
+`
+const PageTitle = styled.h1`
+  font-size: 30px;
+  display: block;
+`
+const BlogTitle = styled.h2`
+  font-size: 20px;
+  padding: 0 10px;
+  paddingBottom: 5px;
+  display: block;
+`
+
+const DateTag = styled.h3`
+  font-size: 12px;
+  padding-bottom: 2px;
+  display: block;
+`
+const Paragraph = styled.p`
+  font-size: 15px;
+  padding-bottom: 10px;
+  display: block;
+  color: #313740;
+`
+
+const PostItem = styled.div`
+  padding: 50px 20px;
+  overflow: hidden;
+`
+const Button = styled.button`
+  border: solid #000 1px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  float: center;
+`
+const LinkTag = styled.a`
+  color: #313740;
+`
 export default class Blog extends Component {
 	constructor(props) {
     super(props)
@@ -26,58 +72,9 @@ export default class Blog extends Component {
     })
   }
 
-
+  
 
   render() {
-    const hOneStyle = {
-      fontSize: "30px",
-      display: "block"
-    }
-    const paraStyle = {
-      fontSize: "15px",
-      paddingBottom: "10px",
-      display: "block",
-      color: '#313740'
-    }
-
-    const hTwoStyle = {
-      fontSize: "20px",
-      padding: "0 10px",
-      paddingBottom: "5px",
-      display: "block",
-    }
-
-    const buttonStyle = {
-      background: "#656A73",
-      padding: "5px",
-      marginBottom: "10px",
-      borderRadius: "10px",
-      display: "inline-block",
-      float: "center"
-    }
-
-    const hThreeStyle = {
-      fontSize: "12px",
-      paddingBottom: "2px",
-      display: "block"
-
-    }
-
-    const divStyle = {
-      background: "#fff",
-      padding: "10px",
-      color: '#313740',
-      lineHeight: '2',
-    }
-
-    const postItem = {
-      padding: '50px 20px',
-      overflow: 'hidden',
-      
-    }
-
-
-
     let blogPosts = this.state.blogPosts.map( (blogPost, index) => {
       
       let month = new Array();
@@ -100,9 +97,9 @@ export default class Blog extends Component {
 
         <div key={index}>
 
-          <div style={postItem}>
-            <h2 style={hTwoStyle}>{blogPost.title.rendered}</h2>
-            <h3 style={hThreeStyle}>{myDate}</h3>
+          <PostItem>
+            <BlogTitle>{blogPost.title.rendered}</BlogTitle>
+            <DateTag>{myDate}</DateTag>
             <div>
               {blogPost.better_featured_image ? (
                 // console.log(blogPost.better_featured_image)
@@ -111,21 +108,21 @@ export default class Blog extends Component {
                 ''
               )}
             </div>
-            <p style={paraStyle} dangerouslySetInnerHTML={{ __html: blogPost.excerpt.rendered}}></p>
-            <button style={buttonStyle}><Link style={{color: "#fff"}} to={"post/" + blogPost.id}>Read More</Link></button>
-          </div>
+            <Paragraph dangerouslySetInnerHTML={{ __html: blogPost.excerpt.rendered}}></Paragraph>
+            <Button><Link style={{color: "#fff"}} to={"post/" + blogPost.id}>Read More</Link></Button>
+          </PostItem>
           <hr/>                                  
         </div>
       )
     })
     return (
-    	<div style={divStyle}>
-          <h1 style={hOneStyle}>Articles</h1>
+    	<BlogDiv>
+          <PageTitle>Articles</PageTitle>
           <hr style={{margin: '0 20%'}}/>
         	{blogPosts}
           <hr style={{margin:"10px 30px"}}/>
           <hr style={{margin:"10px 50px"}}/>          
-      </div>
+      </BlogDiv>
     )
   }
 

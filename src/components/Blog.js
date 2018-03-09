@@ -8,9 +8,13 @@ import styled from 'styled-components'
 
 const BlogDiv = styled.div`
   background: #fff;
-  padding: 10px;
+  padding: 10px 5%;
   color: #313740;
   line-height: 2;
+
+  @media (min-width: 700px) {
+    padding: 10px 20%;
+  }
 `
 const PageTitle = styled.h1`
   font-size: 30px;
@@ -41,14 +45,13 @@ const PostItem = styled.div`
 `
 const Button = styled.button`
   border: solid #000 1px;
-  padding: 5px;
+  padding: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
   display: inline-block;
   float: center;
-`
-const LinkTag = styled.a`
-  color: #313740;
+
+  a{color: #313740;}
 `
 export default class Blog extends Component {
 	constructor(props) {
@@ -109,7 +112,7 @@ export default class Blog extends Component {
               )}
             </div>
             <Paragraph dangerouslySetInnerHTML={{ __html: blogPost.excerpt.rendered}}></Paragraph>
-            <Button><Link style={{color: "#fff"}} to={"post/" + blogPost.id}>Read More</Link></Button>
+            <Button><Link to={"post/" + blogPost.id}>Read More</Link></Button>
           </PostItem>
           <hr/>                                  
         </div>

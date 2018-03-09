@@ -1,7 +1,18 @@
 import React, { Component } from 'react'
 // import PropTypes from 'prop-types';
+import styled from 'styled-components'
 
+const BlogPostDiv = styled.div`
+  background: #fff;
+  padding: 10px 5%;
+  color: #313740;
+  line-height: 2;
+  overflow: hidden;
 
+  @media (min-width: 700px) {
+    padding: 10px 20%;
+  }
+`
 export default class BlogPost extends Component {
 
 	constructor(props){
@@ -83,7 +94,7 @@ export default class BlogPost extends Component {
   		
   		return(
 
-  			<div style={divStyle}>
+  			<BlogPostDiv>
           <div style={{padding: '0 10px'}}>          
     				<h1 style={hOneStyle}>{this.state.post.title.rendered}</h1>
     				<h3 style={hThreeStyle}>{this.state.post.date}</h3>
@@ -91,7 +102,7 @@ export default class BlogPost extends Component {
             <hr style={{margin:"0 15px", color: "#fff"}}/>
     				<p style={paraStyle} dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered}}></p>
           </div>
-  			</div>
+  			</BlogPostDiv>
   		)
   	}
 }

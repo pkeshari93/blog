@@ -44,8 +44,6 @@ const Connect = styled.h1`
 const Social = styled.a`
     padding: 0;
     margin: 10px 0;
-
-    &i:hover{color: #red;}
 `
 
 export default class SocialMedia extends Component{

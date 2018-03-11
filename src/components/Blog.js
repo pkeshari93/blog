@@ -8,13 +8,16 @@ import styled from 'styled-components'
 
 const BlogDiv = styled.div`
   background: #fff;
-  padding: 150px 5%;
+  padding: 10px 5%;
+  padding-top: 150px;
   color: #313740;
   line-height: 2;
 
 
   @media (min-width: 700px) {
-    padding: 80px 20%;
+    padding: 10px 20%;
+    padding-top: 80px;
+    
   }
 `
 const PageTitle = styled.h1`
@@ -24,27 +27,30 @@ const PageTitle = styled.h1`
 const BlogTitle = styled.h2`
   font-size: 20px;
   padding: 0 10px;
-  paddingBottom: 5px;
+  padding-bottom: 30px;
   display: block;
 `
 
 const DateTag = styled.h3`
   font-size: 12px;
-  padding-bottom: 2px;
+  padding-bottom: 15px;
   display: block;
+  text-align: left;
 `
 const Paragraph = styled.p`
   font-size: 15px;
   padding-bottom: 10px;
   display: block;
   color: #313740;
+  text-align: left;
 `
 
 const PostItem = styled.div`
-  padding: 50px 20px;
+  padding: 35px 20px;
   overflow: hidden;
 `
 const Button = styled.button`
+  background: #fff;
   border: solid #000 1px;
   padding: 10px;
   margin-bottom: 10px;
@@ -103,7 +109,7 @@ export default class Blog extends Component {
 
           <PostItem>
             <BlogTitle>{blogPost.title.rendered}</BlogTitle>
-            <DateTag>{myDate}</DateTag>
+            {/* <DateTag>{myDate}</DateTag> */}
             <div>
               {blogPost.better_featured_image ? (
                 // console.log(blogPost.better_featured_image)
@@ -113,6 +119,8 @@ export default class Blog extends Component {
               )}
             </div>
             <Paragraph dangerouslySetInnerHTML={{ __html: blogPost.excerpt.rendered}}></Paragraph>
+            <h3 style={{textAlign:'left', textDecoration: 'underline'}}>Penned by, {blogPost._embedded.author[0].name}</h3>
+            <DateTag>{myDate}</DateTag>            
             <Button><Link to={"post/" + blogPost.id}>Read More</Link></Button>
           </PostItem>
           <hr/>                                  

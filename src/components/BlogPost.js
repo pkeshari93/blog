@@ -10,7 +10,8 @@ const BlogPostDiv = styled.div`
   overflow: hidden;
 
   @media (min-width: 700px) {
-    padding: 80px 20%;
+    padding: 80px 12%;
+    padding-bottom: 10px;
 
   }
 `
@@ -65,6 +66,22 @@ export default class BlogPost extends Component {
     	})
   	}
   	render(){
+      let month = new Array();
+      month[0] = "January";
+      month[1] = "February";
+      month[2] = "March";
+      month[3] = "April";
+      month[4] = "May";
+      month[5] = "June";
+      month[6] = "July";
+      month[7] = "August";
+      month[8] = "September";
+      month[9] = "October";
+      month[10] = "November";
+      month[11] = "December";
+      let date = new Date(this.state.post.date)
+      let n = month[date.getMonth()];
+      let myDate = n +' '+ + date.getDate()  +  ", " + date.getFullYear()
       const hOneStyle = {
         fontSize: "30px",
         paddingTop: "20px",
@@ -77,6 +94,7 @@ export default class BlogPost extends Component {
         display: "block",
         lineHeight: '2',
         paddingTop: "20px",
+        textAlign: 'left'
       }
       const hThreeStyle = {
         fontSize: "12px",
@@ -98,10 +116,11 @@ export default class BlogPost extends Component {
   			<BlogPostDiv>
           <div style={{padding: '0 10px'}}>          
     				<h1 style={hOneStyle}>{this.state.post.title.rendered}</h1>
-    				<h3 style={hThreeStyle}>{this.state.post.date}</h3>
+    				<h3 style={hThreeStyle}>{myDate}</h3>
             <img src={this.state.post.image} />
-            <hr style={{margin:"0 15px", color: "#fff"}}/>
+            <hr style={{margin:"0 -5%", color: "#fff"}}/>
     				<p style={paraStyle} dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered}}></p>
+            <hr style={{margin:"0 -15%", color: "#fff"}}/>            
           </div>
   			</BlogPostDiv>
   		)

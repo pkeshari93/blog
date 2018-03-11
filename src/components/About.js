@@ -1,6 +1,18 @@
 import React, { Component } from 'react'
-// import PropTypes from 'prop-types';
+import styled from 'styled-components'
 
+// import PropTypes from 'prop-types';
+const Container = styled.div`
+  background: #fff;
+  padding: 150px 5%;
+  color: #313740;
+  line-height: 2;
+
+
+  @media (min-width: 700px) {
+    padding: 60px 20%;
+  }
+`
 export default class About extends Component {
 
   render() {
@@ -24,7 +36,7 @@ export default class About extends Component {
 			height: '100%'
 		}
     return (
-    	<div style={divStyle}>
+    	<Container>
 				<h1 style={hOneStyle}>About</h1>	
 				<hr style={{margin:"40px 15px", padding: '0px'}}/>
 				<p style={paraStyle}>
@@ -49,7 +61,7 @@ export default class About extends Component {
 				</p>
 				<br/>
 				<hr/>
-      </div>
+      </Container>
     )
   }
 

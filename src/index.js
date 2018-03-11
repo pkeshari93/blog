@@ -1,8 +1,8 @@
-import React from 'react'
+// import React from 'react'
 import ReactDOM from 'react-dom'
 import routes from './routes'
 import './index.css';
-import './stylesheets/css_reset.css';
+import './stylesheets/css_reset.css'; 
 // import App from './App';
 // import registerServiceWorker from './registerServiceWorker';
 

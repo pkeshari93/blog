@@ -4,13 +4,14 @@ import styled from 'styled-components'
 
 const BlogPostDiv = styled.div`
   background: #fff;
-  padding: 10px 5%;
+  padding: 150px 5%;
   color: #313740;
   line-height: 2;
   overflow: hidden;
 
   @media (min-width: 700px) {
-    padding: 10px 20%;
+    padding: 80px 20%;
+
   }
 `
 export default class BlogPost extends Component {

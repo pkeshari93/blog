@@ -12,7 +12,10 @@ const Container = styled.div`
 	height: auto;
 	background: #1F2329;
 	color: #fff;
-
+	position: fixed;
+	left: 0;
+	opacity: .8;
+	
 
 	@media (min-width: 700px) {
 		display: inline-flex;
@@ -38,30 +41,31 @@ export default class Header extends Component {
   	}
 
   	const navStyle = {
-  		display: "block",
+  		display: "inline-block",
   		float: "center",
   		color: "#F2E8E4",
 		padding: "10px 0",
 		paddingRight: "2%",
-		alignSelf: "center",
+		whiteSpace: 'nowrap',
+		
 		  
 
   	}
 
   	const hStyle = {
-  		display: "block",
+  		display: "inline-block",
   		float: "center",
   		fontSize: "25px",
-		padding: "10px 0",
-		paddingLeft: "2%",
-		alignSelf: "center",		
-
+		padding: "10px 2%",
+		whiteSpace: 'nowrap',
   	}
 
   	let liStyle = {
   		display: 'inline-block',
 		margin: "0 10px",
-		fontSize: "20px"  
+		fontSize: "20px" ,
+		padding: "0 10px", 
+		
 	}
 
 	// let iStyle = {
@@ -81,12 +85,10 @@ export default class Header extends Component {
 				<i className="fab fa-react fa-2x" style={iStyle}></i>	 */}
 			</div>					
 	    	<nav style={navStyle}>
-	    		<div>
 	    			<ul style={{padding: "none"}}>
 	    				<li style={liStyle}><Link to="/blog">home</Link></li>
 	    				<li style={liStyle}><Link to="/about">about</Link></li>
 	    			</ul>
-	    		</div>
 	    	</nav>
     	</Container>
     )

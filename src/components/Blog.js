@@ -8,12 +8,13 @@ import styled from 'styled-components'
 
 const BlogDiv = styled.div`
   background: #fff;
-  padding: 10px 5%;
+  padding: 150px 5%;
   color: #313740;
   line-height: 2;
 
+
   @media (min-width: 700px) {
-    padding: 10px 20%;
+    padding: 80px 20%;
   }
 `
 const PageTitle = styled.h1`
@@ -78,8 +79,8 @@ export default class Blog extends Component {
   
 
   render() {
+    
     let blogPosts = this.state.blogPosts.map( (blogPost, index) => {
-      
       let month = new Array();
       month[0] = "January";
       month[1] = "February";

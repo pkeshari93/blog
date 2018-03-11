@@ -35,7 +35,7 @@ const DateTag = styled.h3`
   font-size: 12px;
   padding-bottom: 15px;
   display: block;
-  text-align: left;
+  text-align: center;
 `
 const Paragraph = styled.p`
   font-size: 15px;
@@ -52,13 +52,19 @@ const PostItem = styled.div`
 const Button = styled.button`
   background: #fff;
   border: solid #000 1px;
-  padding: 10px;
   margin-bottom: 10px;
   border-radius: 10px;
   display: inline-block;
   float: center;
-
-  a{color: #313740;}
+  a{color: #313740; padding: 10px;}
+  &:hover ${Button}{
+    transition: .6s;
+      background: #333;
+      a{
+        color: #fff;
+      }
+    
+  }
 `
 export default class Blog extends Component {
 	constructor(props) {
@@ -119,9 +125,9 @@ export default class Blog extends Component {
               )}
             </div>
             <Paragraph dangerouslySetInnerHTML={{ __html: blogPost.excerpt.rendered}}></Paragraph>
-            <h3 style={{textAlign:'left', textDecoration: 'underline'}}>Penned by, {blogPost._embedded.author[0].name}</h3>
+            <h3 style={{textAlign:'center', fontSize:'14px'}}>Penned by, {blogPost._embedded.author[0].name}</h3>
             <DateTag>{myDate}</DateTag>            
-            <Button><Link to={"post/" + blogPost.id}>Read More</Link></Button>
+            <Button><Link to={"post/" + blogPost.id}>Read Me</Link></Button>
           </PostItem>
           <hr/>                                  
         </div>

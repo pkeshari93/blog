@@ -17,7 +17,7 @@ const Container = styled.div`
         margin: 0px 10px;
     }
     position: fixed;
-    top: 75px;
+    top: 90px;
     left: 10%;
     right: 10%;
 	// left: 0;
@@ -44,6 +44,14 @@ const Connect = styled.h1`
 const Social = styled.a`
     padding: 0;
     margin: 10px 0;
+    color: #333;
+    &:hover ${Social}{
+        padding: 8px;
+        background: #000;
+        border-radius: 5px;
+        color: #fff;
+        transition: .4s;
+    }
 `
 
 export default class SocialMedia extends Component{
@@ -52,10 +60,10 @@ export default class SocialMedia extends Component{
             <Container>
                 {/* <Connect>Connect with me</Connect> */}
                 <ul>
-                    <li><Social target="_blank" href="https://www.linkedin.com/in/prakhar-keshari-68163b84/"><i style={{color:'#333'}} className="fab fa-linkedin-in fa-2x"></i></Social></li>
-                    <li><Social target="_blank" href="https://github.com/pkeshari93"><i style={{color:'#333'}} className="fab fa-github-square fa-2x"></i></Social></li>
-                    <li><Social target="_blank" href="https://www.instagram.com/prakhar.odyssey/"><i style={{color:'#333'}} className="fab fa-instagram fa-2x"></i></Social></li>
-                    <li><Social target="_blank" href="https://www.facebook.com/keshari.prakhar"><i style={{color:'#333'}} className="fab fa-facebook-square fa-2x"></i></Social></li>  
+                    <li><Social target="_blank" href="https://www.linkedin.com/in/prakhar-keshari-68163b84/"><i className="fab fa-linkedin-in fa-2x"></i></Social></li>
+                    <li><Social target="_blank" href="https://github.com/pkeshari93"><i className="fab fa-github-square fa-2x"></i></Social></li>
+                    <li><Social target="_blank" href="https://www.instagram.com/prakhar.odyssey/"><i className="fab fa-instagram fa-2x"></i></Social></li>
+                    <li><Social target="_blank" href="https://www.facebook.com/keshari.prakhar"><i className="fab fa-facebook-square fa-2x"></i></Social></li>  
                 </ul>                                              
             </Container>
         )

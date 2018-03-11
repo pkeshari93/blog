@@ -23,6 +23,21 @@ const Container = styled.div`
 	}
 	
 ` 
+const List = styled.li`
+	display: inline-block;
+  	margin: 0 10px;
+  	font-size: 20px;
+	padding: 5px 5px;
+	  
+	&:hover ${List}{
+		background:#fff;
+		// opacity: .8;
+		transition: .2s;
+		a{
+			color:#333;
+		}
+	}
+`
 export default class Header extends Component {
 
   render() {
@@ -60,13 +75,12 @@ export default class Header extends Component {
 		whiteSpace: 'nowrap',
   	}
 
-  	let liStyle = {
-  		display: 'inline-block',
-		margin: "0 10px",
-		fontSize: "20px" ,
-		padding: "0 10px", 
-		
-	}
+  	// let liStyle = {
+  	// 	display: 'inline-block',
+	// 	margin: "0 10px",
+	// 	fontSize: "20px" ,
+	// 	padding: "0 10px", 
+	// }
 
 	// let iStyle = {
 	// 	display: "inline-block",
@@ -86,8 +100,8 @@ export default class Header extends Component {
 			</div>					
 	    	<nav style={navStyle}>
 	    			<ul style={{padding: "none"}}>
-	    				<li style={liStyle}><Link to="/blog">home</Link></li>
-	    				<li style={liStyle}><Link to="/about">about</Link></li>
+	    				<List><Link to="/blog">home</Link></List>
+	    				<List><Link to="/about">about</Link></List>
 	    			</ul>
 	    	</nav>
     	</Container>

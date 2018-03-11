@@ -5,6 +5,7 @@ import styled from 'styled-components'
 const BlogPostDiv = styled.div`
   background: #fff;
   padding: 150px 5%;
+  padding-bottom: 10px;
   color: #313740;
   line-height: 2;
   overflow: hidden;
@@ -12,8 +13,29 @@ const BlogPostDiv = styled.div`
   @media (min-width: 700px) {
     padding: 80px 12%;
     padding-bottom: 10px;
-
   }
+`
+const Content = styled.div`
+  font-size: 15px;
+  padding-bottom: 10px;
+  display: block;
+  line-height: 2;
+  padding-top: 20px;
+  text-align: left;
+  h1{
+    font-size: 50px;
+  }
+  pre{
+    display: block;
+    text-align: center;
+    img{
+      display: inline-block;
+      margin: auto;
+      // border: 2px solid black;
+      padding: 10px;
+    }
+  }
+  
 `
 export default class BlogPost extends Component {
 
@@ -110,6 +132,10 @@ export default class BlogPost extends Component {
         color: '#313740',
         overflow: 'hidden'
       }
+
+      const imgStyle = {
+        padding: '20px auto',
+      }
   		
   		return(
 
@@ -119,7 +145,7 @@ export default class BlogPost extends Component {
     				<h3 style={hThreeStyle}>{myDate}</h3>
             <img src={this.state.post.image} />
             <hr style={{margin:"0 -5%", color: "#fff"}}/>
-    				<p style={paraStyle} dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered}}></p>
+    				<Content dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered}}></Content>
             <hr style={{margin:"0 -15%", color: "#fff"}}/>            
           </div>
   			</BlogPostDiv>

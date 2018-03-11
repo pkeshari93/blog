@@ -4,7 +4,8 @@ import styled from 'styled-components'
 // import PropTypes from 'prop-types';
 const Container = styled.div`
   background: #fff;
-  padding: 150px 5%;
+	padding: 150px 5%;
+	padding-bottom: 10px;
   color: #313740;
   line-height: 2;
 

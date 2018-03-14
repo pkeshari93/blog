@@ -10,11 +10,14 @@ var FontAwesome = require('react-fontawesome');
 const Container = styled.div`
 	width: 100%;
 	height: auto;
-	background: #1F2329;
-	color: #fff;
+	background: #fff;
+	color: #1F2329;
 	position: fixed;
 	left: 0;
-	opacity: .8;
+	top: 0;
+	font-family: Sacramento;
+	font-size: 30px;
+	padding: 20px;
 	
 
 	@media (min-width: 700px) {
@@ -23,87 +26,57 @@ const Container = styled.div`
 	}
 	
 ` 
+const Logo = styled.h1`
+	display: inline-block;
+	float: center;
+	font-size: 50px;
+	padding: 10px 0;
+	// padding-left: 10px;
+	white-space: nowrap;
+`
+
+const Nav = styled.nav`
+	display: inline-block;
+	float: center;
+	color: #F2E8E4;
+	padding: 10px 0;
+	padding-right: 30px;
+	white-space: nowrap;
+`
+
 const List = styled.li`
 	display: inline-block;
-  	margin: 0 10px;
-  	font-size: 20px;
+  	margin: 5px 10px;
+	font-size: 20px;
+	backgorund: #fff;
+	font-family: Comfortaa;
+	a{
+		color: #1F2329;
+	}
+	  
 	padding: 5px 5px;
 	  
 	&:hover ${List}{
-		background:#fff;
-		// opacity: .8;
+		background:#1F2329;
 		transition: .2s;
 		a{
-			color:#333;
+			color:#fff;
 		}
 	}
 `
 export default class Header extends Component {
 
   render() {
-  	const headerStyles = {
-  		width: "100%",
-  		height: "auto",
-  		background: "#1F2329",
-  		color: "#fff",
-  	}
-  	const iconStyle = {
-  		height: "40px",
-  		width: "40px",
-  		display: "inline-block",
-  		float: "center",
-		padding: "15px", 
-  	}
-
-  	const navStyle = {
-  		display: "inline-block",
-  		float: "center",
-  		color: "#F2E8E4",
-		padding: "10px 0",
-		paddingRight: "2%",
-		whiteSpace: 'nowrap',
-		
-		  
-
-  	}
-
-  	const hStyle = {
-  		display: "inline-block",
-  		float: "center",
-  		fontSize: "25px",
-		padding: "10px 2%",
-		whiteSpace: 'nowrap',
-  	}
-
-  	// let liStyle = {
-  	// 	display: 'inline-block',
-	// 	margin: "0 10px",
-	// 	fontSize: "20px" ,
-	// 	padding: "0 10px", 
-	// }
-
-	// let iStyle = {
-	// 	display: "inline-block",
-  	// 	float: "center",
-	// 	padding: "15px", 
-	// }
-	  
     return (
     	<Container>    	
-	    	<h1 style={hStyle}>A Coder's Odyssey</h1>
-			<div>
-				{/* <i className="fab fa-html5 fa-2x" style={iStyle}></i>						
-				<i className="fab fa-css3-alt fa-2x" style={iStyle}></i>												 */}
-				{/* <img style={iconStyle} src={require('../assets/enzo.png')} alt=""/> */}
-				{/* <i className="fab fa-js fa-2x" style={iStyle}></i>
-				<i className="fab fa-react fa-2x" style={iStyle}></i>	 */}
-			</div>					
-	    	<nav style={navStyle}>
+	    	<Logo>A Coder's Odyssey</Logo>
+								
+	    	<Nav>
 	    			<ul style={{padding: "none"}}>
 	    				<List><Link to="/blog">home</Link></List>
 	    				<List><Link to="/about">about</Link></List>
 	    			</ul>
-	    	</nav>
+	    	</Nav>
     	</Container>
     )
   }

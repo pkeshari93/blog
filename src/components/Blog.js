@@ -9,14 +9,15 @@ import styled from 'styled-components'
 const BlogDiv = styled.div`
   background: #fff;
   padding: 10px 5%;
-  padding-top: 150px;
+  padding-top: 210px;
+  font-family: Comfortaa;
   color: #313740;
   line-height: 2;
 
 
   @media (min-width: 700px) {
     padding: 10px 20%;
-    padding-top: 80px;
+    padding-top: 130px;
     
   }
 `
@@ -25,24 +26,24 @@ const PageTitle = styled.h1`
   display: block;
 `
 const BlogTitle = styled.h2`
-  font-size: 20px;
+  font-size: 25px;
   padding: 0 10px;
   padding-bottom: 30px;
   display: block;
 `
 
-const DateTag = styled.h3`
-  font-size: 12px;
-  padding-bottom: 15px;
+const DateAuthor = styled.h3`
+  font-size: 15px;
+  padding-bottom: 2px;
   display: block;
   text-align: center;
 `
 const Paragraph = styled.p`
-  font-size: 15px;
+  font-size: 18px;
   padding-bottom: 10px;
   display: block;
   color: #313740;
-  text-align: left;
+  // text-align: left;
 `
 
 const PostItem = styled.div`
@@ -56,6 +57,7 @@ const Button = styled.button`
   border-radius: 10px;
   display: inline-block;
   float: center;
+  font-size: 18px;
   a{color: #313740; padding: 10px;}
   &:hover ${Button}{
     transition: .6s;
@@ -65,6 +67,12 @@ const Button = styled.button`
       }
     
   }
+`
+const Hr = styled.hr`
+  border: 0;
+  height: 2px;
+  background: #000;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
 `
 export default class Blog extends Component {
 	constructor(props) {
@@ -87,8 +95,6 @@ export default class Blog extends Component {
       })
     })
   }
-
-  
 
   render() {
     
@@ -125,21 +131,19 @@ export default class Blog extends Component {
               )}
             </div>
             <Paragraph dangerouslySetInnerHTML={{ __html: blogPost.excerpt.rendered}}></Paragraph>
-            <h3 style={{textAlign:'center', fontSize:'14px'}}>Penned by, {blogPost._embedded.author[0].name}</h3>
-            <DateTag>{myDate}</DateTag>            
+            <DateAuthor>Penned by, {blogPost._embedded.author[0].name}</DateAuthor>
+            <DateAuthor>{myDate}</DateAuthor>            
             <Button><Link to={"post/" + blogPost.id}>Read Me</Link></Button>
           </PostItem>
-          <hr/>                                  
+          <Hr/>                                  
         </div>
       )
     })
     return (
-    	<BlogDiv>
+    	<BlogDiv>          
           <PageTitle>Articles</PageTitle>
-          <hr style={{margin: '0 20%'}}/>
+          <Hr/>
         	{blogPosts}
-          <hr style={{margin:"10px 30px"}}/>
-          <hr style={{margin:"10px 50px"}}/>          
       </BlogDiv>
     )
   }

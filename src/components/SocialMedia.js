@@ -9,7 +9,7 @@ const Container = styled.div`
     border-radius: 10px;
     opacity: .8;
     // border: solid 1px #333;
-    margin: 10px 0;
+    margin: 40px 0;
     color: #313740;
     li{
         display: inline-block;
@@ -46,11 +46,11 @@ const Social = styled.a`
     margin: 10px 0;
     color: #333;
     &:hover ${Social}{
-        padding: 8px;
+        padding: 5px;
         background: #000;
         border-radius: 5px;
         color: #fff;
-        transition: .4s;
+        transition: .2s;
     }
 `
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import PropTypes from 'prop-types';
 import styled from 'styled-components'
+var dateFormat = require('dateformat');
 
 const Container = styled.div`
   background: #fff;
@@ -45,7 +46,14 @@ const Content = styled.div`
   h1{
     font-size: 25px;
   }
+  h2{
+    font-size: 22px;
+  }
+  video{
+    text-align: center;
+  }
   p{
+    display: inline-block;
     font-size: 18px;
     padding-bottom: 10px;
     display: block;
@@ -68,7 +76,7 @@ export default class BlogPost extends Component {
 		super(props)
 		this.state = {
 			post:{
-				'date': '',
+				'date': new Date(),
 				'title': '',
         'content': '',
         'author': '',
@@ -83,14 +91,6 @@ export default class BlogPost extends Component {
     	fetch(postUrl)
     	.then(response => response.json()) 
     	.then(response => {
-      		// this.setState({
-        // 		post: {
-        //       date: response.date_gmt, 
-        //       title: response.title, 
-        //       content: response.content, 
-        //       image: response.better_featured_image.media_details.sizes.thumbnail.source_url
-        //     }
-      		// })
           if(response.better_featured_image == null){
             this.setState({
               post: {
@@ -116,22 +116,8 @@ export default class BlogPost extends Component {
     	})
   	}
   	render(){
-      let month = new Array();
-      month[0] = "January";
-      month[1] = "February";
-      month[2] = "March";
-      month[3] = "April";
-      month[4] = "May";
-      month[5] = "June";
-      month[6] = "July";
-      month[7] = "August";
-      month[8] = "September";
-      month[9] = "October";
-      month[10] = "November";
-      month[11] = "December";
       let date = new Date(this.state.post.date)
-      let n = month[date.getMonth()];
-      let myDate = n +' '+ + date.getDate()  +  ", " + date.getFullYear()
+      let myDate = dateFormat(date, "longDate");      
   		
   		return(
 

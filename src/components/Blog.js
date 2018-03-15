@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import BlogPost from './BlogPost'
 import styled from 'styled-components'
-
+var dateFormat = require('dateformat');
 
 // import PropTypes from 'prop-types';
 
@@ -36,7 +36,7 @@ const DateAuthor = styled.h3`
   font-size: 15px;
   padding-bottom: 2px;
   display: block;
-  text-align: center;
+  text-align: left;
 `
 const Paragraph = styled.p`
   font-size: 18px;
@@ -48,6 +48,7 @@ const Paragraph = styled.p`
 
 const PostItem = styled.div`
   padding: 35px 20px;
+  padding-bottom: 0;
   overflow: hidden;
 `
 const Button = styled.button`
@@ -99,22 +100,8 @@ export default class Blog extends Component {
   render() {
     
     let blogPosts = this.state.blogPosts.map( (blogPost, index) => {
-      let month = new Array();
-      month[0] = "January";
-      month[1] = "February";
-      month[2] = "March";
-      month[3] = "April";
-      month[4] = "May";
-      month[5] = "June";
-      month[6] = "July";
-      month[7] = "August";
-      month[8] = "September";
-      month[9] = "October";
-      month[10] = "November";
-      month[11] = "December";
       let date = new Date(blogPost.date_gmt)
-      let n = month[date.getMonth()];
-      let myDate = n +' '+ + date.getDate()  +  ", " + date.getFullYear()
+      let myDate = dateFormat(date, "longDate");
       return(
 
         <div key={index}>
@@ -131,9 +118,10 @@ export default class Blog extends Component {
               )}
             </div>
             <Paragraph dangerouslySetInnerHTML={{ __html: blogPost.excerpt.rendered}}></Paragraph>
-            <DateAuthor>Penned by, {blogPost._embedded.author[0].name}</DateAuthor>
-            <DateAuthor>{myDate}</DateAuthor>            
+                       
             <Button><Link to={"post/" + blogPost.id}>Read Me</Link></Button>
+            <DateAuthor>Penned by, {blogPost._embedded.author[0].name}</DateAuthor>
+            <DateAuthor>{myDate}</DateAuthor> 
           </PostItem>
           <Hr/>                                  
         </div>

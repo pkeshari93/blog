@@ -5,7 +5,7 @@ var FontAwesome = require('react-fontawesome');
 const Container = styled.div`
     display: block;
     background: #fff;
-    padding: 2px 10px;
+    padding: 8px 10px;
     border-radius: 10px;
     opacity: .8;
     // border: solid 1px #333;
@@ -13,7 +13,7 @@ const Container = styled.div`
     color: #313740;
     li{
         display: inline-block;
-        padding: 0px 10px;
+        padding: 0px 8px;
         margin: 0px 10px;
     }
     position: fixed;
@@ -23,6 +23,7 @@ const Container = styled.div`
 	// left: 0;
 
     @media (min-width: 700px) {
+        padding: 2px 10px;        
         display: inline-block;
         width: 52px;
         justify-content: space-around;
@@ -42,11 +43,14 @@ const Connect = styled.h1`
 `
 
 const Social = styled.a`
-    padding: 0;
+    padding: 2px;
     margin: 10px 0;
     color: #333;
-    &:hover ${Social}{
-        padding: 5px;
+    display: inline-block;
+    text-decoration: none;
+    &:hover ${Social}{       
+        padding-left: 30px;
+        padding-right: 5px;
         background: #000;
         border-radius: 5px;
         color: #fff;

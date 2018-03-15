@@ -22,10 +22,16 @@ const PageTitle = styled.h1`
   display: block;
 `
 const Img = styled.img`
-	width: 40%;
+	width: 30%;
 	min-width: 200px;
 	height: auto;
 	margin: 20px;
+	-o-box-shadow:      2px 2px 12px #555;
+-icab-box-shadow:   2px 2px 12px #555;
+-khtml-box-shadow:  2px 2px 12px #555;
+-moz-box-shadow:    2px 2px 12px #555;
+-webkit-box-shadow: 2px 2px 12px #555;
+box-shadow:         2px 2px 12px #555;
 `
 const Paragraph = styled.p`
   font-size: 18px;

@@ -16,11 +16,12 @@ const Container = styled.div`
 	left: 0;
 	top: 0;
 	font-family: Sacramento;
-	font-size: 30px;
+	font-size: 35px;
 	padding: 20px;
 	
 
 	@media (min-width: 700px) {
+		font-size: 50px;
 		display: inline-flex;
 		justify-content: space-between;
 	}
@@ -29,8 +30,8 @@ const Container = styled.div`
 const Logo = styled.h1`
 	display: inline-block;
 	float: center;
-	font-size: 50px;
 	padding: 10px 0;
+	padding-right: 20px;
 	// padding-left: 10px;
 	white-space: nowrap;
 `
@@ -51,7 +52,11 @@ const List = styled.li`
 	backgorund: #fff;
 	font-family: Comfortaa;
 	a{
+		text-decoration: none; 
+		font-size: 20px;
+  		display: inline-block;
 		color: #1F2329;
+        transition: .2s;		
 	}
 	  
 	padding: 5px 5px;
@@ -59,7 +64,7 @@ const List = styled.li`
 	&:hover ${List}{
 		background:#1F2329;
 		transition: .2s;
-		a{
+		a{			
 			color:#fff;
 		}
 	}

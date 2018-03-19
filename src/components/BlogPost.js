@@ -5,7 +5,7 @@ var dateFormat = require('dateformat');
 
 const Container = styled.div`
   background: #fff;
-  padding: 210px 5%;
+  padding: 210px 5px;
   padding-bottom: 10px;
   font-family: Comfortaa;  
   color: #313740;
@@ -18,16 +18,19 @@ const Container = styled.div`
   }
 `
 const ArticleTitle = styled.h1`
-  font-size: 30px;
+  font-size: 25px;
   display: block;
   padding-bottom: 20px;
+  font-weight: bold;
+  font-color: #000;
 `
 
 const DateAuthor = styled.h3`
-  font-size: 15px;
+  font-size: 12px;
   padding-bottom: 2px;
   display: block;
   text-align: center;
+  color: #555;  
 `
 const Hr = styled.hr`
   border: 0;
@@ -45,13 +48,30 @@ const Content = styled.div`
   text-align: left;
   h1{
     font-size: 25px;
+    font-weight: bold;
+    color: #000;
   }
   h2{
     font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    
   }
-  video{
-    text-align: center;
+
+  h3{
+    font-size: 20px;
+    font-weight: bold; 
+    color: #000;
+       
   }
+
+  h4{
+    font-size: 18px;
+    font-weight: bold; 
+    color: #000;
+    
+  }
+
   p{
     display: inline-block;
     font-size: 18px;
@@ -60,12 +80,23 @@ const Content = styled.div`
     color: #313740;
   }
 
+  a{
+    color: red;
+  }
+
   pre{
     display: block;
     text-align: center;
+    color: #313740;
+
     img{
+      width: 50%;
+      height: auto;
+      min-width: 250px;
       display: inline-block;
       padding: 50px;
+      text-align: center;
+      // filter: brightness(140%) contrast(100%) saturate(90%);
     }
   }
   
@@ -86,7 +117,7 @@ export default class BlogPost extends Component {
 	}
 
 	componentDidMount(){
-    	let postUrl = 'http://localhost:8888/wp-json/wp/v2/posts/' + this.props.params.id + '?_embed'
+    	let postUrl = 'http://acodersodyssey.com/wp-json/wp/v2/posts/' + this.props.params.id + '?_embed'
     	console.log(postUrl)
     	fetch(postUrl)
     	.then(response => response.json()) 
@@ -126,7 +157,7 @@ export default class BlogPost extends Component {
     				<ArticleTitle>{this.state.post.title.rendered}</ArticleTitle>
             <DateAuthor>Penned by, {this.state.post.author}</DateAuthor>
     				<DateAuthor>{myDate}</DateAuthor>
-            <img style={{margin: "20px"}} src={this.state.post.image} />
+            {/* <img style={{margin: "20px"}} src={this.state.post.image} /> */}
             <Hr/>
     				<Content dangerouslySetInnerHTML={{ __html: this.state.post.content.rendered}}></Content>
             <Hr/>            

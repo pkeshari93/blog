@@ -84,7 +84,7 @@ export default class Blog extends Component {
   }
 
   componentDidMount() {
-    let blogPostUrl = 'http://localhost:8888/wp-json/wp/v2/posts?_embed'
+    let blogPostUrl = 'http://acodersodyssey.com/wp-json/wp/v2/posts?_embed'
 
     // fetching the promise 
     fetch(blogPostUrl)

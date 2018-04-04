@@ -7,9 +7,6 @@ const Container = styled.div`
     background: #fff;
     padding: 8px 10px;
     border-radius: 10px;
-    opacity: .8;
-    // border: solid 1px #333;
-    margin: 40px 0;
     color: #313740;
     li{
         display: inline-block;
@@ -17,7 +14,8 @@ const Container = styled.div`
         margin: 0px 10px;
     }
     position: fixed;
-    top: 90px;
+    bottom: 0px;
+    margin: 0px;
     left: 10%;
     right: 10%;
 	// left: 0;

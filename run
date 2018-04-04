@@ -1,0 +1,201 @@
+Script started on Mon Apr  2 10:44:31 2018
+[?1034hbash-3.2$ jest steps/test.js --watch[C[C[C[C[C[C[C[C[C[C[K
+bash-3.2$ jest steps/test.js --watch[C[C[C[C[C[C[C[C[C[C[Knpm run
+Lifecycle scripts included in blog-front:
+  start
+    react-scripts start
+  test
+    react-scripts test --env=jsdom
+
+available via `npm run-script`:
+  build
+    react-scripts build
+  eject
+    react-scripts eject
+bash-3.2$ npm start
+
+> blog-front@0.1.0 start /Users/prakharkeshari/Desktop/projects/acodersodyssey/blog-front
+> react-scripts start
+
+[2J[3J[H[36mStarting the development server...
+[39m
+[2J[3J[H[33mCompiled with warnings.
+[39m
+[7m./src/components/Blog.js[27m
+  [1mLine 3:[22m    'BlogPost' is defined but never used                                                                       [33m[4mno-unused-vars[24m[39m
+  [1mLine 63:[22m   'Button' was used before it was defined                                                                    [33m[4mno-use-before-define[24m[39m
+  [1mLine 115:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+
+[7m./src/components/SocialMedia.js[27m
+  [1mLine 3:[22m   'FontAwesome' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 37:[22m  'Connect' is assigned a value but never used      [33m[4mno-unused-vars[24m[39m
+  [1mLine 49:[22m  'Social' was used before it was defined           [33m[4mno-use-before-define[24m[39m
+
+[7m./src/components/Header.js[27m
+  [1mLine 6:[22m   'FontAwesome' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 64:[22m  'List' was used before it was defined             [33m[4mno-use-before-define[24m[39m
+
+[7m./src/components/App.js[27m
+  [1mLine 8:[22m  'styled' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.
+[39m
+[7m./src/components/Blog.js[27m
+  [1mLine 3:[22m    'BlogPost' is defined but never used                                                                       [33m[4mno-unused-vars[24m[39m
+  [1mLine 41:[22m   'Paragraph' is assigned a value but never used                                                             [33m[4mno-unused-vars[24m[39m
+  [1mLine 63:[22m   'Button' was used before it was defined                                                                    [33m[4mno-use-before-define[24m[39m
+  [1mLine 115:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+
+[7m./src/components/SocialMedia.js[27m
+  [1mLine 3:[22m   'FontAwesome' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 37:[22m  'Connect' is assigned a value but never used      [33m[4mno-unused-vars[24m[39m
+  [1mLine 49:[22m  'Social' was used before it was defined           [33m[4mno-use-before-define[24m[39m
+
+[7m./src/components/Header.js[27m
+  [1mLine 6:[22m   'FontAwesome' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 64:[22m  'List' was used before it was defined             [33m[4mno-use-before-define[24m[39m
+
+[7m./src/components/App.js[27m
+  [1mLine 8:[22m  'styled' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.
+[39m
+[7m./src/components/Blog.js[27m
+  [1mLine 3:[22m    'BlogPost' is defined but never used                                                                       [33m[4mno-unused-vars[24m[39m
+  [1mLine 41:[22m   'Paragraph' is assigned a value but never used                                                             [33m[4mno-unused-vars[24m[39m
+  [1mLine 63:[22m   'Button' was used before it was defined                                                                    [33m[4mno-use-before-define[24m[39m
+  [1mLine 115:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+
+[7m./src/components/SocialMedia.js[27m
+  [1mLine 3:[22m   'FontAwesome' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 37:[22m  'Connect' is assigned a value but never used      [33m[4mno-unused-vars[24m[39m
+  [1mLine 49:[22m  'Social' was used before it was defined           [33m[4mno-use-before-define[24m[39m
+
+[7m./src/components/Header.js[27m
+  [1mLine 6:[22m   'FontAwesome' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 64:[22m  'List' was used before it was defined             [33m[4mno-use-before-define[24m[39m
+
+[7m./src/components/App.js[27m
+  [1mLine 8:[22m  'styled' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.
+[39m
+[7m./src/components/Blog.js[27m
+  [1mLine 3:[22m    'BlogPost' is defined but never used                                                                       [33m[4mno-unused-vars[24m[39m
+  [1mLine 41:[22m   'Paragraph' is assigned a value but never used                                                             [33m[4mno-unused-vars[24m[39m
+  [1mLine 63:[22m   'Button' was used before it was defined                                                                    [33m[4mno-use-before-define[24m[39m
+  [1mLine 115:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+
+[7m./src/components/SocialMedia.js[27m
+  [1mLine 3:[22m   'FontAwesome' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 37:[22m  'Connect' is assigned a value but never used      [33m[4mno-unused-vars[24m[39m
+  [1mLine 49:[22m  'Social' was used before it was defined           [33m[4mno-use-before-define[24m[39m
+
+[7m./src/components/Header.js[27m
+  [1mLine 6:[22m   'FontAwesome' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 64:[22m  'List' was used before it was defined             [33m[4mno-use-before-define[24m[39m
+
+[7m./src/components/App.js[27m
+  [1mLine 8:[22m  'styled' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+[2J[3J[HCompiling...
+[2J[3J[H[33mCompiled with warnings.
+[39m
+[7m./src/components/Blog.js[27m
+  [1mLine 3:[22m    'BlogPost' is defined but never used                                                                       [33m[4mno-unused-vars[24m[39m
+  [1mLine 41:[22m   'Paragraph' is assigned a value but never used                                                             [33m[4mno-unused-vars[24m[39m
+  [1mLine 63:[22m   'Button' was used before it was defined                                                                    [33m[4mno-use-before-define[24m[39m
+  [1mLine 115:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+
+[7m./src/components/SocialMedia.js[27m
+  [1mLine 3:[22m   'FontAwesome' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 37:[22m  'Connect' is assigned a value but never used      [33m[4mno-unused-vars[24m[39m
+  [1mLine 49:[22m  'Social' was used before it was defined           [33m[4mno-use-before-define[24m[39m
+
+[7m./src/components/Header.js[27m
+  [1mLine 6:[22m   'FontAwesome' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 64:[22m  'List' was used before it was defined             [33m[4mno-use-before-define[24m[39m
+
+[7m./src/components/App.js[27m
+  [1mLine 8:[22m  'styled' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+^C
+
+[33m[39m
+[33m   ╭─────────────────────────────────────╮[39m
+   [33m│[39m                                     [33m│[39m
+   [33m│[39m   Update available [2m5.6.0[22m[0m → [0m[32m5.8.0[39m    [33m│[39m
+   [33m│[39m       Run [36mnpm i npm[39m to update       [33m│[39m
+   [33m│[39m                                     [33m│[39m
+[33m   ╰─────────────────────────────────────╯[39m
+[33m[39m
+
+
+bash-3.2$ npm run build
+
+> blog-front@0.1.0 build /Users/prakharkeshari/Desktop/projects/acodersodyssey/blog-front
+> react-scripts build
+
+Creating an optimized production build...
+[33mCompiled with warnings.
+[39m
+[7m./src/components/Blog.js[27m
+  [1mLine 3:[22m    'BlogPost' is defined but never used                                                                       [33m[4mno-unused-vars[24m[39m
+  [1mLine 41:[22m   'Paragraph' is assigned a value but never used                                                             [33m[4mno-unused-vars[24m[39m
+  [1mLine 63:[22m   'Button' was used before it was defined                                                                    [33m[4mno-use-before-define[24m[39m
+  [1mLine 115:[22m  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  [33m[4mjsx-a11y/alt-text[24m[39m
+
+[7m./src/components/SocialMedia.js[27m
+  [1mLine 3:[22m   'FontAwesome' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 37:[22m  'Connect' is assigned a value but never used      [33m[4mno-unused-vars[24m[39m
+  [1mLine 49:[22m  'Social' was used before it was defined           [33m[4mno-use-before-define[24m[39m
+
+[7m./src/components/Header.js[27m
+  [1mLine 6:[22m   'FontAwesome' is assigned a value but never used  [33m[4mno-unused-vars[24m[39m
+  [1mLine 64:[22m  'List' was used before it was defined             [33m[4mno-use-before-define[24m[39m
+
+[7m./src/components/App.js[27m
+  [1mLine 8:[22m  'styled' is defined but never used  [33m[4mno-unused-vars[24m[39m
+
+Search for the [4m[33mkeywords[39m[24m to learn more about each warning.
+To ignore, add [36m// eslint-disable-next-line[39m to the line before.
+
+File sizes after gzip:
+
+  68.55 KB ([32m-55 B[39m)  [2mbuild/static/js/[22m[36mmain.9e9d064e.js[39m
+  729 B             [2mbuild/static/css/[22m[36mmain.d87d0918.css[39m
+
+The project was built assuming it is hosted at [32mthe server root[39m.
+You can control this with the [32mhomepage[39m field in your [36mpackage.json[39m.
+For example, add this to build it for GitHub Pages:
+
+  [32m"homepage"[39m [36m:[39m [32m"http://myname.github.io/myapp"[39m[36m,[39m
+
+The [36mbuild[39m folder is ready to be deployed.
+You may serve it with a static server:
+
+  [36mserve[39m -s build
+
+Find out more about deployment here:
+
+  [33mhttp://bit.ly/2vY88Kr[39m
+
+bash-3.2$ 

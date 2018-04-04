@@ -9,11 +9,11 @@ var dateFormat = require('dateformat');
 const BlogDiv = styled.div`
   background: #fff;
   padding: 10px 5%;
-  padding-top: 210px;
+  padding-top: 150px;
   font-family: Comfortaa;
   color: #313740;
   line-height: 2;
-
+  
 
   @media (min-width: 700px) {
     padding: 10px 20%;
@@ -117,7 +117,7 @@ export default class Blog extends Component {
                 ''
               )}
             </div>
-            <Paragraph dangerouslySetInnerHTML={{ __html: blogPost.excerpt.rendered}}></Paragraph>
+            {/* <Paragraph dangerouslySetInnerHTML={{ __html: blogPost.excerpt.rendered}}></Paragraph> */}
                        
             <Button><Link to={"post/" + blogPost.id}>Read Me</Link></Button>
             <DateAuthor>Penned by, {blogPost._embedded.author[0].name}</DateAuthor>

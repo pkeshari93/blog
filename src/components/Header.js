@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router'
 import '../stylesheets/header.css'
 import styled from 'styled-components'
+import media from '../styling/media'
 // var React = require('react');
 var FontAwesome = require('react-fontawesome');
 
@@ -15,45 +16,71 @@ const Container = styled.div`
 	position: fixed;
 	left: 0;
 	top: 0;
-	font-family: Sacramento;
-	font-size: 35px;
-	padding: 20px;
+	display: flex
+	justify-content: space-between;
+	
+	${media.desktop`
+		padding: 12px 0px;
+		h1{
+			padding: 0 10px;
+			float: left;
+			font-size: 40px;
+		}
+		li{
+			margin: 0px 10px;
+			font-size: 25px;
+		}
+	`
+	}
+
+	${media.tablet`
+		padding: 12px 0px;
+		h1{
+			padding: 0 10px;
+			float: left;
+			font-size: 40px;
+		}
+		li{
+			margin: 0px 10px;
+			font-size: 25px;
+		}
+	`
+	}
+	
+	${media.phone`
+		padding: 5px 5px;
+		h1{
+			float: left;
+			font-size: 25px;
+		}
+		li{
+			margin: 0px 10px;
+			font-size: 15px;
+		}
+	`
+	}
+
 	
 
-	@media (min-width: 700px) {
-		font-size: 40px;
-		display: inline-flex;
-		justify-content: space-between;
-	}
 	
 ` 
 const Logo = styled.h1`
 	display: inline-block;
-	float: center;
-	padding: 10px 0;
-	padding-right: 20px;
-	// padding-left: 10px;
-	white-space: nowrap;
+	float: left;
+	font-family: Sacramento;
 `
 
 const Nav = styled.nav`
 	display: inline-block;
-	float: center;
-	color: #F2E8E4;
-	padding: 10px 0;
-	padding-right: 30px;
-	white-space: nowrap;
 `
 
 const List = styled.li`
 	display: inline-block;
-  	margin: 5px 10px;
-	font-size: 20px;
+  	
 	backgorund: #fff;
 	font-family: Comfortaa;
 	a{
 		text-decoration: none; 
-		font-size: 20px;
   		display: inline-block;
 		color: #1F2329;
         transition: .2s;		
@@ -74,13 +101,13 @@ export default class Header extends Component {
   render() {
     return (
     	<Container>    	
-	    	<Logo>A Coder's Odyssey</Logo>
-								
+	    	
+			<Logo>A Coder's Odyssey</Logo>				
 	    	<Nav>
-	    			<ul style={{padding: "none"}}>
-	    				<List><Link to="/blog">home</Link></List>
-	    				<List><Link to="/about">about</Link></List>
-	    			</ul>
+				<ul style={{padding: "none"}}>
+					<List><Link to="/blog">home</Link></List>
+					<List><Link to="/about">about</Link></List>
+				</ul>
 	    	</Nav>
     	</Container>
     )

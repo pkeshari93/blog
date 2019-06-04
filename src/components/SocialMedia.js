@@ -8,32 +8,14 @@ const Container = styled.div`
         display: flex;
         flex-direction: column;
         text-align: center;
-        width: 225px;
         height: auto;
         background: #fff;
         border-radius: 10px;
         color: #313740;
-        ul{
-            display: inline-block;
-        }
         ${Social}{
             display: block
         }
         padding: 0;
-        a{
-            color: #313740;                
-            padding: 0 15px;
-            font-size: 35px
-            &:hover{     
-                padding-left: 30px;
-                padding-right: 0px;
-                background: #000;
-                border-radius: 5px;
-                color: #fff;
-                transition: .2s;
-            }
-        }
-        // padding:  10px;        
         width: 52px;
         justify-content: space-around;
         position: fixed;
@@ -49,16 +31,8 @@ const Container = styled.div`
         background: #fff;
         border-radius: 10px;
         color: #313740;
-        ul{
-            display: inline-block;
-        }
         ${Social}{
             display: block
-        }
-        padding: 0;
-        a{
-            padding: 0px 15px;
-            font-size: 25px
         }
         padding: 2px 10px;        
         justify-content: space-around;
@@ -76,9 +50,6 @@ const Container = styled.div`
         background: #fff;
         border-radius: 10px;
         color: #313740;
-        ul{
-            display: inline-block;
-        }
         position: fixed;
         top: 92%;
         left: 17%;
@@ -102,13 +73,13 @@ const Social = styled.div`
 
 const SocialMediaLinks = styled.a`
   color: #313740;
-  padding: 0 15px;
-  font-size: 35px;
+  padding: 2px 15px;
+  font-size: 30px;
   &:hover {
     padding-left: 40px;
     padding-right: 5px;
     background: #000;
-    border-radius: 5px;
+    border-radius: 0 5px 5px 0;
     color: #fff;
     transition: 0.2s;
   }

@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import React, { Component } from "react";
+import styled from "styled-components";
 
 const Container = styled.div`
   color: #313740;
@@ -7,13 +7,14 @@ const Container = styled.div`
   padding: 20px;
   font-size: 20px;
   display: block;
-  font-family: Comfortaa; 
-`
-export default class Footer extends Component{
-
-    render(){
-        return(
-            <Container>{'\u00A9'} 2018 Prakhar Keshari</Container>   
-        )
-    }
+  font-family: Comfortaa;
+`;
+export default class Footer extends Component {
+  render() {
+    return (
+      <Container>
+        {"\u00A9"} {new Date().getFullYear()} Prakhar Keshari
+      </Container>
+    );
+  }
 }

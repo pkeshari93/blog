@@ -1,7 +1,5 @@
 import React, { Component, Fragment } from "react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { Spinner } from "./Spinner";
 
 // import PropTypes from 'prop-types';
@@ -100,20 +98,6 @@ export default class About extends Component {
             }}
           />
         </Spinner>
-        {/* {this.state.img ? (
-          <Fragment>
-            <PageTitle>About</PageTitle>
-            <Hr />
-            <Img src={this.state.img.source_url} />
-            <Content
-              dangerouslySetInnerHTML={{
-                __html: this.state.content
-              }}
-            />
-          </Fragment>
-        ) : (
-          <Spinner icon={faSpinner} />
-        )} */}
       </Container>
     );
   }

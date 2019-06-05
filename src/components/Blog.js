@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router";
 import BlogPost from "./BlogPost";
 import styled from "styled-components";
+import { Spinner } from "./Spinner";
+
 var dateFormat = require("dateformat");
 
 // import PropTypes from 'prop-types';
@@ -79,7 +81,8 @@ export default class Blog extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      blogPosts: []
+      blogPosts: [],
+      isLoading: true
     };
   }
 

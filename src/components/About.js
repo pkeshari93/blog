@@ -1,84 +1,104 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
+import React, { Component, Fragment } from "react";
+import styled from "styled-components";
+import { Spinner } from "./Spinner";
 
 // import PropTypes from 'prop-types';
 const Container = styled.div`
-	background: #fff;
-	padding: 10px 5%;
-	padding-top: 210px;
-	font-family: Comfortaa;
-	color: #313740;
-	line-height: 2.5;
+  background: #fff;
+  padding: 10px 5%;
+  padding-top: 210px;
+  font-family: Comfortaa;
+  color: #313740;
+  line-height: 2.5;
 
-
-	@media (min-width: 700px) {
-		padding: 10px 20%;
-		padding-top: 130px;
-		
-	}
-`
+  @media (min-width: 700px) {
+    padding: 10px 20%;
+    padding-top: 130px;
+  }
+`;
 const PageTitle = styled.h1`
   font-size: 30px;
   display: block;
-`
+`;
+
+// const Spinner = styled(FontAwesomeIcon)`
+//   font-size: 100px;
+//   animation: App-logo-spin infinite 3s linear;
+// `;
+
 const Img = styled.img`
-	width: 30%;
-	min-width: 200px;
-	height: auto;
-	margin: 20px;
-	-o-box-shadow:      2px 2px 12px #555;
--icab-box-shadow:   2px 2px 12px #555;
--khtml-box-shadow:  2px 2px 12px #555;
--moz-box-shadow:    2px 2px 12px #555;
--webkit-box-shadow: 2px 2px 12px #555;
-box-shadow:         2px 2px 12px #555;
-`
-const Paragraph = styled.p`
+  width: 30%;
+  min-width: 200px;
+  height: auto;
+  margin: 20px;
+  -o-box-shadow: 2px 2px 12px #555;
+  -icab-box-shadow: 2px 2px 12px #555;
+  -khtml-box-shadow: 2px 2px 12px #555;
+  -moz-box-shadow: 2px 2px 12px #555;
+  -webkit-box-shadow: 2px 2px 12px #555;
+  box-shadow: 2px 2px 12px #555;
+`;
+const Content = styled.div`
   font-size: 18px;
   padding-bottom: 10px;
   display: block;
   color: #313740;
-  // text-align: left;
-`
+  text-align: left;
+  ul {
+    list-style-type: circle;
+  }
+  h4 {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  h6 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+`;
 const Hr = styled.hr`
   border: 0;
   height: 2px;
   background: #000;
   background-image: linear-gradient(to right, #ccc, #333, #ccc);
-`
+`;
 export default class About extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      img: "",
+      content: "",
+      isLoading: true
+    };
+  }
+
+  componentDidMount() {
+    let aboutPage = "http://acodersodyssey.com/wp-json/wp/v2/pages?_embed";
+
+    fetch(aboutPage)
+      .then(response => response.json())
+      .then(response => {
+        this.setState({
+          img: response[0].better_featured_image.media_details.sizes.medium,
+          content: response[0].content.rendered
+        });
+      });
+  }
 
   render() {
     return (
-    	<Container>
-				<PageTitle>About</PageTitle>	
-				<Hr/>
-				<Img src={require('../assets/me.jpg')}/>
-				<Paragraph>
-					Hey there! I am Prakhar. I am a Software Engineer and a Full-stack 
-					developer with a passion for CREATING and BUILDING simple tools that 
-					help simple people like you and I to optimize our lives and work on 
-					things that matter and move us forward.
-				</Paragraph>
-				<br/>
-				<Paragraph>
-					I believe every challenge is 
-					an opportunity for us to come out better and stronger. We must use 
-					every single day to hunt down these challenges and use them as opportunities 
-					to solve problems.
-				</Paragraph>
-				<br/>
-				<Paragraph>
-					So, let me take you on a journey through my blogs as I explore, discover 
-					and challenge myself on my pursuit of becoming a better Developer at
-					crafting beautiful and higly interactive user experiences with 
-					the latest web technologies and languages.
-				</Paragraph>
-				<br/>
-				<Hr/>
+      <Container>
+        <Spinner isLoading={this.state.img == "" || this.state.content == ""}>
+          <PageTitle>About</PageTitle>
+          <Hr />
+          <Img src={this.state.img.source_url} />
+          <Content
+            dangerouslySetInnerHTML={{
+              __html: this.state.content
+            }}
+          />
+        </Spinner>
       </Container>
-    )
+    );
   }
-
 }
-

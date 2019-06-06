@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Link } from "react-router";
 import BlogPost from "./BlogPost";
 import styled from "styled-components";
@@ -104,7 +104,7 @@ export default class Blog extends Component {
       let date = new Date(blogPost.date_gmt);
       let myDate = dateFormat(date, "longDate");
       return (
-        <div key={index}>
+        <Fragment key={index}>
           <PostItem>
             <BlogTitle>{blogPost.title.rendered}</BlogTitle>
             {/* <DateTag>{myDate}</DateTag> */}
@@ -121,7 +121,6 @@ export default class Blog extends Component {
                 ""
               )}
             </div>
-            {/* <Paragraph dangerouslySetInnerHTML={{ __html: blogPost.excerpt.rendered}}></Paragraph> */}
 
             <Button>
               <Link to={"post/" + blogPost.id}>Read Me</Link>
@@ -132,14 +131,16 @@ export default class Blog extends Component {
             <DateAuthor>{myDate}</DateAuthor>
           </PostItem>
           <Hr />
-        </div>
+        </Fragment>
       );
     });
     return (
       <BlogDiv>
         <PageTitle>Articles</PageTitle>
         <Hr />
-        {blogPosts}
+        <Spinner isLoading={this.state.blogPosts.length === 0}>
+          {blogPosts}
+        </Spinner>
       </BlogDiv>
     );
   }

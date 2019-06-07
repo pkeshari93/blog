@@ -114,6 +114,7 @@ export default class Contact extends Component {
   render() {
     return (
       <PageWarpper>
+        <span class="steam" />
         <PageTitle>Contact</PageTitle>
         <Form
           action="https://formspree.io/pkeshari@mtu.edu"

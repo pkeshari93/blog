@@ -99,6 +99,9 @@ export default class Header extends Component {
         <Nav>
           <ul style={{ padding: "none" }}>
             <List>
+              <Link to="/home">home</Link>
+            </List>
+            <List>
               <Link to="/blog">blog</Link>
             </List>
             <List>

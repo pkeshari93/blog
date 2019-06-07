@@ -8,6 +8,10 @@ const Container = styled.div`
   font-size: 20px;
   display: block;
   font-family: Comfortaa;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 `;
 export default class Footer extends Component {
   render() {

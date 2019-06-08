@@ -143,7 +143,10 @@ export default class Header extends Component {
       <Container>
         <Logo>A Coder's Odyssey</Logo>
         <Nav open={this.state.open}>
-          <StyledUl style={{ padding: "none" }}>
+          <StyledUl
+            onClick={this.handleClick.bind(this)}
+            style={{ padding: "none" }}
+          >
             <List>
               <Link to="/home">home</Link>
             </List>

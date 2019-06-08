@@ -61,8 +61,8 @@ const Logo = styled.div`
   ${media.phone`
 		display: block;
 		padding: 5px 0;
-		font-size: 20px;
-		width: 150px;
+		font-size: 30px;
+    width: 200px;
 	`}
 `;
 
@@ -77,7 +77,7 @@ const Nav = styled.nav`
 		position: absolute;
 		top:0;
 		left: 0;
-		background: rgba(31, 35, 41, .95);
+		background: rgba(31, 35, 41, .99);
 		z-index: 99;
 	`}
 `;
@@ -94,7 +94,11 @@ const StyledHamburgerMenu = styled.div`
 const StyledUl = styled.ul`
   display: block;
   ${media.phone`
-		margin-top: 100px;
+		margin-top: 200px;
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		background: #fff;
 	`}
 `;
 
@@ -122,9 +126,9 @@ const List = styled.li`
   ${media.phone`
 		display: block;
 		font-size: 30px;
-		padding: 10px 0;
+		padding: 20px 0;
 		a{
-			color: #fff;
+			color: #000;
 		}
 	`}
 `;
@@ -140,13 +144,10 @@ export default class Header extends Component {
 
   render() {
     return (
-      <Container>
+      <Container onClick={this.handleClick.bind(this)}>
         <Logo>A Coder's Odyssey</Logo>
         <Nav open={this.state.open}>
-          <StyledUl
-            onClick={this.handleClick.bind(this)}
-            style={{ padding: "none" }}
-          >
+          <StyledUl style={{ padding: "none" }}>
             <List>
               <Link to="/home">home</Link>
             </List>
@@ -165,8 +166,8 @@ export default class Header extends Component {
           <HamburgerMenu
             isOpen={this.state.open}
             menuClicked={this.handleClick.bind(this)}
-            width={18}
-            height={15}
+            width={35}
+            height={30}
             strokeWidth={1}
             rotate={0}
             color={this.state.open ? "white" : "black"}

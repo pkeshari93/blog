@@ -9,7 +9,6 @@ const Quote = styled.div`
   width: 600px;
   font-size: 30px;
   font-family: Comfortaa;
-  padding: 0.2em 0.5em;
   font-weight: bold;
   color: #313740;
   margin-left: auto;
@@ -22,7 +21,8 @@ const Quote = styled.div`
 
 const Wrapper = styled.div`
   display: block;
-  height: 50vw;
+  width: 100%;
+  height: 100%;
 `;
 
 const CoffeeWrapper = styled.div`
@@ -145,26 +145,24 @@ const Li = styled.li`
 export default class Blog extends Component {
   render() {
     return (
-      <Fragment>
-        <Wrapper>
-          <CoffeeWrapper>
-            <Ul>
-              <Li />
-              <Li />
-              <Li />
-              <Li />
-              <Li />
-              <Li />
-              <Li />
-              <Li />
-              <Li />
-              <Li />
-            </Ul>
-            <CoffeeMug icon={faCoffee} />
-          </CoffeeWrapper>
-          <Quote>You give me Coffee I give you Code</Quote>
-        </Wrapper>
-      </Fragment>
+      <Wrapper>
+        <CoffeeWrapper>
+          <Ul>
+            <Li />
+            <Li />
+            <Li />
+            <Li />
+            <Li />
+            <Li />
+            <Li />
+            <Li />
+            <Li />
+            <Li />
+          </Ul>
+          <CoffeeMug icon={faCoffee} />
+        </CoffeeWrapper>
+        <Quote>You give me Coffee I give you Code</Quote>
+      </Wrapper>
     );
   }
 }

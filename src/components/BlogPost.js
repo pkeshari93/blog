@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 // import PropTypes from 'prop-types';
 import styled from "styled-components";
+import media from "../styling/media";
+import { Spinner } from "./Spinner";
+
 var dateFormat = require("dateformat");
 
 const Container = styled.div`
@@ -16,6 +19,10 @@ const Container = styled.div`
     padding: 130px 12%;
     padding-bottom: 10px;
   }
+  ${media.phone`
+    bottom: 0;
+    padding: 40px 5px;
+	`}
 `;
 const ArticleTitle = styled.h1`
   font-size: 25px;
@@ -150,8 +157,10 @@ export default class BlogPost extends Component {
     let myDate = dateFormat(date, "longDate");
 
     return (
-      <Container>
-        <div style={{ padding: "0 10px" }}>
+      <Spinner
+        isLoading={this.state.post.img == "" || this.state.post.content == ""}
+      >
+        <Container>
           <ArticleTitle>{this.state.post.title.rendered}</ArticleTitle>
           <DateAuthor>Penned by, {this.state.post.author}</DateAuthor>
           <DateAuthor>{myDate}</DateAuthor>
@@ -163,8 +172,8 @@ export default class BlogPost extends Component {
             }}
           />
           <Hr />
-        </div>
-      </Container>
+        </Container>
+      </Spinner>
     );
   }
 }

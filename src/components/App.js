@@ -12,8 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 
 const AppWrap = styled.div`
-  padding-bottom: 40px;
-  position: relative;
+  position: relative !important;
   height: 100vh;
   width: 100vw;
 `;
@@ -22,16 +21,10 @@ class App extends Component {
   render() {
     return (
       <AppWrap>
-        <Favicon>
-          <FontAwesomeIcon icon={faCoffee} />
-        </Favicon>
-        <div>
-          <Header />
-        </div>
-        <div>
-          <SocialMedia />
-        </div>
+        <Header />
+
         <div>{this.props.children}</div>
+        <SocialMedia />
         <Footer />
       </AppWrap>
     );

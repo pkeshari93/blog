@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import styled from "styled-components";
 import { Spinner } from "./Spinner";
+import media from "../styling/media";
 
 // import PropTypes from 'prop-types';
 const Container = styled.div`
@@ -15,6 +16,10 @@ const Container = styled.div`
     padding: 10px 20%;
     padding-top: 130px;
   }
+
+  ${media.phone`
+    padding: 40px 5px;
+	`}
 `;
 const PageTitle = styled.h1`
   font-size: 30px;

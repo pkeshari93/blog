@@ -45,19 +45,19 @@ const Container = styled.div`
     ${media.phone`
         display: block;
         text-align: center;
-        width: 225px;
+        width: 100%;
         height: 45px;
         background: #fff;
         border-radius: 10px;
         color: #313740;
         position: fixed;
-        top: 85%;
-        left: 17%;
+        top: 91%;
+        left: 0%;
         margin: 0px;
         a{
             color: #313740;    
             font-size: 25px
-            padding: 15px;
+            padding: 0 15px;
         }  
 	`}
 `;

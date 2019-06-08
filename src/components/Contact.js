@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import styled from "styled-components";
+import media from "../styling/media";
 
 const PageWarpper = styled.div`
   background: #fff;
@@ -13,6 +14,10 @@ const PageWarpper = styled.div`
     padding: 10px 20%;
     padding-top: 130px;
   }
+
+  ${media.phone`
+    padding: 40px 5px;
+	`}
 `;
 
 const PageTitle = styled.h1`
@@ -50,6 +55,9 @@ const Form = styled.form`
   margin-right: auto;
   margin-bottom: 2em;
   align-items: flex-start;
+  ${media.phone`
+		width: 300px;
+	`}
 `;
 
 const Input = styled.input`
@@ -114,6 +122,7 @@ export default class Contact extends Component {
   render() {
     return (
       <PageWarpper>
+        <span class="steam" />
         <PageTitle>Contact</PageTitle>
         <Form
           action="https://formspree.io/pkeshari@mtu.edu"

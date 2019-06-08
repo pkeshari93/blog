@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import BlogPost from "./BlogPost";
 import styled from "styled-components";
 import { Spinner } from "./Spinner";
+import media from "../styling/media";
 
 var dateFormat = require("dateformat");
 
@@ -20,6 +21,10 @@ const BlogDiv = styled.div`
     padding: 10px 20%;
     padding-top: 130px;
   }
+
+  ${media.phone`
+    padding: 40px 5px;
+	`}
 `;
 const PageTitle = styled.h1`
   font-size: 30px;

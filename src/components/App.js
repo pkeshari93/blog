@@ -15,6 +15,7 @@ const AppWrap = styled.div`
   position: relative !important;
   height: 100vh;
   width: 100vw;
+  orientation: portrait !important;
 `;
 
 class App extends Component {

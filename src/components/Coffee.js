@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import styled, { keyframes } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import media from "../styling/media";
 
 const Quote = styled.div`
   display: block;
@@ -13,9 +14,15 @@ const Quote = styled.div`
   color: #313740;
   margin-left: auto;
   margin-right: auto;
+  ${media.phone`
+    font-size: 18px;
+    width: 100%;
+	`}
 `;
+
 const Wrapper = styled.div`
   display: block;
+  height: 50vw;
 `;
 
 const CoffeeWrapper = styled.div`
@@ -28,6 +35,10 @@ const CoffeeWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50px;
+  ${media.phone`
+    width: 200px;
+    height: 200px;
+	`}
 `;
 
 const CoffeeMug = styled(FontAwesomeIcon)`
@@ -36,6 +47,11 @@ const CoffeeMug = styled(FontAwesomeIcon)`
   left: 10%;
   top: 45%;
   color: black;
+  ${media.phone`
+    font-size: 150px;
+    left: 7%;
+    top: 50%;
+	`}
 `;
 const Ul = styled.ul`
   position: absolute;
@@ -78,6 +94,10 @@ const Li = styled.li`
   position: fixed;
   width: 50px;
   height: 50px;
+  ${media.phone`
+    width: 30px;
+    height: 30px;
+	`}
   border-radius: 30%;
   background: #d9d9db;
   list-style: none;
@@ -90,11 +110,11 @@ const Li = styled.li`
     filter: blur(50px);
   }
   &:nth-child(even) {
-    animation: ${animateEven} 6s linear infinite;
+    animation: ${animateEven} 8s linear infinite;
   }
 
   &:nth-child(odd) {
-    animation: ${animateOdd} 6s linear infinite;
+    animation: ${animateOdd} 8s linear infinite;
   }
   &:nth-child(1) {
     animation-delay: 0s;
@@ -142,8 +162,8 @@ export default class Blog extends Component {
             </Ul>
             <CoffeeMug icon={faCoffee} />
           </CoffeeWrapper>
+          <Quote>You give me Coffee I give you Code</Quote>
         </Wrapper>
-        <Quote>You give me Coffee I give you Code</Quote>
       </Fragment>
     );
   }

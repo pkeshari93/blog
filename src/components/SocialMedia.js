@@ -51,7 +51,7 @@ const Container = styled.div`
         border-radius: 10px;
         color: #313740;
         position: fixed;
-        top: 92%;
+        top: 85%;
         left: 17%;
         margin: 0px;
         a{

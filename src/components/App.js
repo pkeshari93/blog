@@ -1,26 +1,41 @@
 /*  jshint esversion: 6 */
-import React, { Component } from 'react'
+import React, { Component } from "react";
 // import logo from './logo.svg';
-import Header from './Header'
-import Footer from './Footer'
-import SocialMedia from './SocialMedia'
-import '../App.css'
-import styled from 'styled-components'
+import Header from "./Header";
+import Footer from "./Footer";
+import SocialMedia from "./SocialMedia";
+import "../App.css";
+import styled from "styled-components";
+import ReactDOM from "react-dom";
+import Favicon from "react-favicon";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 
+const AppWrap = styled.div`
+  padding-bottom: 40px;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+`;
 
 class App extends Component {
-  render(){
-    return(
-      <div>
-        <div><Header /></div>
-        <div><SocialMedia /></div>        
+  render() {
+    return (
+      <AppWrap>
+        <Favicon>
+          <FontAwesomeIcon icon={faCoffee} />
+        </Favicon>
         <div>
-          {this.props.children}
+          <Header />
         </div>
-        <div><Footer /></div>        
-      </div>
-    )
+        <div>
+          <SocialMedia />
+        </div>
+        <div>{this.props.children}</div>
+        <Footer />
+      </AppWrap>
+    );
   }
 }
 
-export default App
+export default App;

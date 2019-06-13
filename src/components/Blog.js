@@ -141,9 +141,9 @@ export default class Blog extends Component {
     });
     return (
       <BlogDiv>
-        <PageTitle>Articles</PageTitle>
-        <Hr />
         <Spinner isLoading={this.state.blogPosts.length === 0}>
+          <PageTitle>Articles</PageTitle>
+          <Hr />
           {blogPosts}
         </Spinner>
       </BlogDiv>

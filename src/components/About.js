@@ -93,8 +93,8 @@ export default class About extends Component {
   render() {
     return (
       <Container>
-        <PageTitle>About</PageTitle>
         <Spinner isLoading={this.state.img == "" || this.state.content == ""}>
+          <PageTitle>About</PageTitle>
           <Hr />
           <Img src={this.state.img.source_url} />
           <Content

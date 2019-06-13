@@ -92,8 +92,8 @@ const animateOdd = keyframes`
 
 const Li = styled.li`
   position: fixed;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 40px;
   ${media.phone`
     width: 30px;
     height: 30px;

@@ -71,7 +71,7 @@ const animateEven = keyframes`
     filter: blur(5px);
   }
   100% {
-    transform: translate(100px, -500px) scale(3);
+    transform: translate(70px, -500px) scale(3);
     opacity: 1;
     filter: blur(10px);
   }
@@ -84,7 +84,7 @@ const animateOdd = keyframes`
     filter: blur(5px);
   }
   100% {
-    transform: translate(-100px, -500px) scale(3);
+    transform: translate(-70px, -500px) scale(3);
     opacity: 1;
     filter: blur(10px);
   }
@@ -98,7 +98,7 @@ const Li = styled.li`
     width: 30px;
     height: 30px;
 	`}
-  border-radius: 30%;
+  border-radius: 50%;
   background: #d9d9db;
   list-style: none;
   &:nth-child(10) {
@@ -110,35 +110,35 @@ const Li = styled.li`
     filter: blur(50px);
   }
   &:nth-child(even) {
-    animation: ${animateEven} 8s linear infinite;
+    animation: ${animateEven} 15s linear infinite;
   }
 
   &:nth-child(odd) {
-    animation: ${animateOdd} 8s linear infinite;
+    animation: ${animateOdd} 15s linear infinite;
   }
   &:nth-child(1) {
     animation-delay: 0s;
   }
   &:nth-child(2) {
-    animation-delay: 0.4s;
+    animation-delay: 0.6s;
   }
   &:nth-child(3) {
-    animation-delay: 0.8s;
+    animation-delay: 1s;
   }
   &:nth-child(4) {
-    animation-delay: 1.2s;
+    animation-delay: 1.5s;
   }
   &:nth-child(5) {
-    animation-delay: 1.6s;
+    animation-delay: 1.9s;
   }
   &:nth-child(6) {
-    animation-delay: 2s;
+    animation-delay: 2.3s;
   }
   &:nth-child(7) {
-    animation-delay: 2.4s;
+    animation-delay: 2.8s;
   }
   &:nth-child(8) {
-    animation-delay: 2.8s;
+    animation-delay: 3.5s;
   }
 `;
 

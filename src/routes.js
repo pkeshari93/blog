@@ -1,6 +1,7 @@
 import React from "react";
 import { IndexRoute, Router, Route, hashHistory } from "react-router";
 import About from "./components/About";
+import Resume from "./components/Resume";
 import App from "./components/App";
 import Blog from "./components/Blog";
 import BlogPost from "./components/BlogPost";
@@ -15,6 +16,7 @@ export default (
       <Route path={"blog"} component={Blog} />
       <Route path={"/post/:id"} component={BlogPost} />
       <Route path={"about"} component={About} />
+      <Route path={"resume"} component={Resume} />
       <Route path={"contact"} component={Contact} />
     </Route>
   </Router>

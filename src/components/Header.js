@@ -153,6 +153,9 @@ export default class Header extends Component {
               <Link to="/about">about</Link>
             </List>
             <List>
+              <Link to="/resume">resume</Link>
+            </List>
+            <List>
               <Link to="/contact">contact</Link>
             </List>
           </StyledUl>

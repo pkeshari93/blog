@@ -7,7 +7,6 @@ import SocialMedia from "./SocialMedia";
 import "../App.css";
 import styled from "styled-components";
 import ReactDOM from "react-dom";
-import Favicon from "react-favicon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCoffee } from "@fortawesome/free-solid-svg-icons";
 
@@ -15,7 +14,11 @@ const AppWrap = styled.div`
   position: relative !important;
   height: 100vh;
   width: 100vw;
-  orientation: portrait !important;
+  @media (orientation: portrait) {
+    body {
+      flex-direction: column;
+    }
+  }
 `;
 
 class App extends Component {

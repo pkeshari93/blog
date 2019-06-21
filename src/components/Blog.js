@@ -56,7 +56,7 @@ const PostItem = styled.div`
   padding-bottom: 0;
   overflow: hidden;
 `;
-const Button = styled.button`
+export const Button = styled.button`
   background: #fff;
   border: solid #000 1px;
   margin-bottom: 10px;

@@ -18,7 +18,7 @@ export const SpinnerComponent = styled(FontAwesomeIcon)`
   font-size: 100px;
   color: black !important;
   animation: App-logo-spin infinite 3s linear;
-  margin-top: 65%;
+  margin-top: 20%;
 `;
 
 export const Spinner = ({ isLoading, children }) =>

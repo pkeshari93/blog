@@ -56,7 +56,7 @@ const PostItem = styled.div`
   padding-bottom: 0;
   overflow: hidden;
 `;
-const Button = styled.button`
+export const Button = styled.button`
   background: #fff;
   border: solid #000 1px;
   margin-bottom: 10px;
@@ -141,9 +141,9 @@ export default class Blog extends Component {
     });
     return (
       <BlogDiv>
-        <PageTitle>Articles</PageTitle>
-        <Hr />
         <Spinner isLoading={this.state.blogPosts.length === 0}>
+          <PageTitle>Articles</PageTitle>
+          <Hr />
           {blogPosts}
         </Spinner>
       </BlogDiv>

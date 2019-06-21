@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
 import HamburgerMenu from "react-hamburger-menu";
-import "../stylesheets/header.css";
 import styled from "styled-components";
 import media from "../styling/media";
 // var React = require('react');
@@ -22,7 +21,7 @@ const Container = styled.div`
 		padding: 12px 0px;
 		li{
 			margin: 0px 10px;
-			font-size: 25px;
+			font-size: 20px;
 		}
 	`}
 
@@ -44,10 +43,6 @@ const Container = styled.div`
 		position: relative;
 		width: 95%;
 	`}
-
-	
-
-	
 `;
 const Logo = styled.div`
   ${media.desktop`
@@ -156,6 +151,9 @@ export default class Header extends Component {
             </List>
             <List>
               <Link to="/about">about</Link>
+            </List>
+            <List>
+              <Link to="/resume">resume</Link>
             </List>
             <List>
               <Link to="/contact">contact</Link>
